@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+  <title>VR-Classroom</title>
+
+
+  <script type="application/javascript" src="static/aframe/aframe-master.js'"></script>
+  <script type="application/javascript" src="static/aframe/aframe-extras.js'"></script>
+  <script type="application/javascript" src="static/aframe/aframe-physics-system.js'"></script>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
+  <link rel="stylesheet" type="text/css" href= "staticstyle.css'"/>
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+<a-scene physics="; gravity: -9.8" auto-enter-vr
+inspector="url: https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
+  <a-gltf-model id="stage" src="static/gltf/classroom.gltf'" position="0 0 0"></a-gltf-model>
+  <a-entity geometry="primitive: box; width: 19.8; height: 0.2; depth: 9.8" material="transparent: true; opacity: 0"></a-entity>
+  <a-gltf-model id="board" src="static/gltf/board.gltf'" position="0 0 0" static-body ></a-gltf-model>
+
+  <a-gltf-model id="chair1" src="static/gltf/schoolchair.gltf'" position="4 .2 3" rotation="0 -90 0" scale= "0.3 0.3 0.3"></a-gltf-model>
+  <a-gltf-model id="table1" src="static/gltf/schooltable.gltf'" position="4 .2 3" rotation="0 -90 0" scale= "0.3 0.3 0.3"></a-gltf-model>
+  <a-gltf-model id="chair2" src="static/gltf/schoolchair.gltf'" position="4 .2 0" rotation="0 -90 0" scale= "0.3 0.3 0.3"></a-gltf-model>
+  <a-gltf-model id="table2" src="static/gltf/schooltable.gltf'" position="4 .2 0" rotation="0 -90 0" scale= "0.3 0.3 0.3"></a-gltf-model>
+  <a-gltf-model id="chair3" src="static/gltf/schoolchair.gltf'" position="4 .2 -3" rotation="0 -90 0" scale= "0.3 0.3 0.3"></a-gltf-model>
+  <a-gltf-model id="table3" src="static/gltf/schooltable.gltf'" position="4 .2 -3" rotation="0 -90 0" scale= "0.3 0.3 0.3"></a-gltf-model>
+
+
+  <a-entity id="rig" movement-controls="constrainToNavMesh: true">
+    <a-entity camera
+              position="0 1.6 0"
+              look-controls="pointerLockEnabled: true"
+              wash-controls="enabled: true">
+      <a-cursor></a-cursor>
+    </a-entity>
+  </a-entity>
+</a-scene>
+</body>
+</html>
